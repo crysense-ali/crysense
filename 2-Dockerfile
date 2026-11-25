@@ -4,7 +4,7 @@ RUN useradd -m -u 1000 user
 USER user
 ENV PATH="/home/user/.local/bin:$PATH" PORT=7860
 WORKDIR /home/user
-COPY --chown=user 1-crysense.zip crysense.zip
+COPY --chown=user 1-crysense_ar.zip crysense.zip
 RUN unzip -q crysense.zip && rm crysense.zip
 WORKDIR /home/user/crysense
 RUN pip install --no-cache-dir -r requirements.txt gunicorn
